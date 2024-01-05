@@ -4,12 +4,12 @@
             <h1 class="mt-6 text-center text-3xl font-bold text-gray-700">Activate Account</h1>
             <p class="mt-4 text-center">Create your password to activate account</p>
         </div>
-        {% form 'activate_customer_password', class: 'space-y-4', id: 'activate_account_form'%}
+        {% form 'activate_customer_password', class: 'space-y-4', id: 'activate_account_form' %}
             {% if form.errors %}
                 <div class="relative vorder border-red-700 bg-red-100 text-red-700 px-4 py-3" role="alert">
                     <strong class="font-bold">Error!</strong>
                     <span class="block sm:inline">
-                        {{ form.errors |  default_errors }}
+                        {{ form.errors | default_errors }}
                     </span>
                 </div>
             {% endif %}

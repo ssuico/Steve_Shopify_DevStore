@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
@@ -13,7 +13,7 @@
 </style>
 
 <div class="max-w-6xl mx-auto my-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 grid gap-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="product--medias">
             <div class="hidden md:block">
                 {% for media in product.media %}
@@ -204,18 +204,23 @@
 </script>
 
 <script>
-    const swiper = new Swiper('.swiper', {
-        direction: 'horizontal',
+    document.addEventListener('DOMContentLoaded', function(){
+        try{
+            const swiper = new Swiper('.swiper', {
+                direction: 'horizontal',
 
-        pagination: {
-            el: '.swiper-pagination'
-        },
+                pagination: {
+                    el: '.swiper-pagination'
+                },
 
-        navigation: {
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next'
-        }
-    })
+                navigation: {
+                    prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-button-next'
+            }
+        })
+    } catch(e){console.log("SwiperJS is not defined")}
+})
+
 </script>
 
 {% schema %}

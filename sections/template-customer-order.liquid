@@ -18,12 +18,12 @@
                     {% if line_item.image %}
                         <img class="w-full h-full object-center object-cover" src="{{ line_item.image | img_url: 'medium' }}" alt="{{ line_item.image.alt }}">
                     {% else %}
-                        {{ 'product-1' |  placeholder_svg_tag: 'w-full h-full object-center object-cover' }}
+                        {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-center object-cover' }}
                     {% endif %}
                 </div>
 
                 <div>
-                    <h1 class="text-xl font-medium mb-4">{{ line_item.title |  link_to: line_item.product.url }}</h1>
+                    <h1 class="text-xl font-medium mb-4">{{ line_item.title | link_to: line_item.product.url }}</h1>
 
                     <table class="table-auto w-full mb-4">
                         <tbody>
@@ -43,7 +43,7 @@
                     </table>
 
                     <div class="text-gray-500 mb-4">
-                        {{ line_item.product.description |  truncatewords: 15 }}
+                        {{ line_item.product.description | truncatewords: 15 }}
                     </div>
                 </div>
                 
@@ -86,7 +86,7 @@
         <div>
             <h1 class="font-medium mb-4">Billing address</h1>
 
-            {{ order.billing_address |  format_address }}
+            {{ order.billing_address | format_address }}
         </div>
         <div>
             <h1 class="font-medium mb-4">Payment information</h1>
